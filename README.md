@@ -170,10 +170,7 @@ Content that arrives in server-rendered HTML is never hidden on hydration: it's 
 
 Swap the shimmer for an animated ASCII mascot while data loads. It dissolves as the new content decodes in.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/mascot-dark.webp">
-  <img src="assets/readme/mascot-light.webp" alt="A spider, a ghost and a pumpkin drawn in ASCII play while three cards load, then dissolve as the content decodes in" width="100%">
-</picture>
+<img src="assets/portfolio/work-demo.gif" alt="Selected case studies: Pull-Up, Jahota and Where Is My Train cards load behind an ASCII spider, pumpkin and bat, then the content decodes in" width="100%">
 
 ```tsx
 <AsciiReveal loading={isLoading} mascot="spider">  {/* spider | ghost | pumpkin | bat */}

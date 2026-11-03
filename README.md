@@ -4,6 +4,8 @@ Interaction designer in New Delhi. I make complex things simple to use.
 
 This repo holds my portfolio site and the ascii-reveal loading effect it runs on. Content loads in through a character grid, then decodes into place.
 
+<img src="assets/portfolio/portfolio-demo.gif" alt="Walkthrough of the portfolio: the ID card tilts under the cursor, the About cards decode in, the three case study cards load behind ASCII mascots, then the LinkedIn and Spotify cards load" width="100%">
+
 **Case studies**
 
 1. **Pull-Up**: helps young adults in Delhi find small groups that share their interests. 64 interviews.

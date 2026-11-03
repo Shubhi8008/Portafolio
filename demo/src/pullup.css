@@ -1,0 +1,144 @@
+/* Pull-Up v1.2 skin for the ascii-reveal demo.
+   Dark by default, light follows the phone setting. Manrope only (Roboto Mono for code samples).
+   Cards are light stamp islands with lavender dashed edges. Lavender means action. Flat: no gradients,
+   no shadows in dark. Layout and behavior of the demo are unchanged. */
+
+:root,
+:root:not([data-theme="light"]),
+:root[data-theme="dark"] {
+  /* Pull-Up dark tokens */
+  --pu-surface: #0F0F0E; --pu-box: #1E1E1E; --pu-highest: #2B2B2A;
+  --pu-on-surface: #F3F4F4; --pu-on-surface-variant: #A6A6A6; --pu-text-body: #C8C8C8; --pu-text-meta: #DCDCDC;
+  --pu-primary: #D8B6FD; --pu-on-primary: #0F0F0E; --pu-primary-pressed: #C29AF8;
+  --pu-primary-container: #3B2D55; --pu-on-primary-container: #EBDDFF;
+  --pu-outline: #8C8C8C; --pu-outline-variant: #2E2E2D;
+  --pu-success: #6EE7A0; --pu-elev-1: none; --pu-elev-2: none;
+
+  /* map onto the demo's tokens */
+  --bg: var(--pu-surface); --fg: var(--pu-on-surface); --muted: var(--pu-text-body); --faint: var(--pu-on-surface-variant);
+  --line: var(--pu-outline-variant); --line-strong: var(--pu-outline);
+  --glass: var(--pu-box); --glass-strong: var(--pu-highest); --glass-line: var(--pu-outline-variant);
+  --glass-hi: transparent; --glass-shadow: transparent; --sunken: var(--pu-box);
+  --accent: #D8B6FD; --ok: var(--pu-success); --solid: var(--pu-primary); --on-solid: var(--pu-on-primary);
+  --backdrop-glyph: rgba(243, 244, 244, 0.10);
+  --tok-kw: #D8B6FD; --tok-str: #6EE7A0; --tok-tag: #EBDDFF; --tok-attr: #DCDCDC;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --pu-surface: #F6F6F6; --pu-box: #FFFFFF; --pu-highest: #F0F0F2;
+    --pu-on-surface: #111113; --pu-on-surface-variant: #69696E; --pu-text-body: #5C5C63; --pu-text-meta: #3A3A3C;
+    --pu-primary: #7A3CE6; --pu-on-primary: #FFFFFF; --pu-primary-pressed: #6230C0;
+    --pu-primary-container: #E4D5F5; --pu-on-primary-container: #4B2D63;
+    --pu-outline: #8A8A8A; --pu-outline-variant: #E4E4E7;
+    --pu-success: #15803D; --pu-elev-1: 0 2px 8px rgba(26,26,26,0.06); --pu-elev-2: 0 4px 16px rgba(26,26,26,0.10);
+    --accent: #7A3CE6; --backdrop-glyph: rgba(17, 17, 19, 0.10);
+    --tok-kw: #7A3CE6; --tok-str: #15803D; --tok-tag: #4B2D63; --tok-attr: #3A3A3C;
+  }
+}
+:root[data-theme="light"] {
+  --pu-surface: #F6F6F6; --pu-box: #FFFFFF; --pu-highest: #F0F0F2;
+  --pu-on-surface: #111113; --pu-on-surface-variant: #69696E; --pu-text-body: #5C5C63; --pu-text-meta: #3A3A3C;
+  --pu-primary: #7A3CE6; --pu-on-primary: #FFFFFF; --pu-primary-pressed: #6230C0;
+  --pu-primary-container: #E4D5F5; --pu-on-primary-container: #4B2D63;
+  --pu-outline: #8A8A8A; --pu-outline-variant: #E4E4E7;
+  --pu-success: #15803D; --pu-elev-1: 0 2px 8px rgba(26,26,26,0.06); --pu-elev-2: 0 4px 16px rgba(26,26,26,0.10);
+  --accent: #7A3CE6; --backdrop-glyph: rgba(17, 17, 19, 0.10);
+  --tok-kw: #7A3CE6; --tok-str: #15803D; --tok-tag: #4B2D63; --tok-attr: #3A3A3C;
+}
+
+:root {
+  --sans: "Manrope", "Noto Sans Devanagari", system-ui, sans-serif;
+  --mono: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
+  --ascii-font: var(--mono);
+  --ascii-accent: var(--pu-primary);
+  --ascii-flash: var(--pu-primary);
+  --ascii-skeleton: var(--pu-on-surface-variant);
+  --ascii-mascot: #7A3CE6;
+}
+
+body { font-size: 16px; line-height: 24px; }
+
+/* type scale: display 36/40 700, h1 32/40 700, h2 24/32 600, h3 18/24 600, sentence case */
+h1 { font-size: clamp(36px, 4.6vw, 56px); font-weight: 700; letter-spacing: -0.8px; line-height: 1.08; }
+.cmp-head h2 { font-size: clamp(32px, 3.6vw, 44px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.15; }
+.usage-intro h2 { font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.3px; }
+.headline { font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.3px; }
+.title, .step h3 { font-size: 18px; line-height: 24px; font-weight: 600; letter-spacing: 0; }
+.big { font-size: 36px; line-height: 40px; font-weight: 700; letter-spacing: -0.8px; font-variant-numeric: tabular-nums; }
+.lede, .body { font-size: 16px; line-height: 24px; }
+.small { font-size: 14px; line-height: 20px; }
+.tiny { font-size: 12px; }
+.eyebrow, .glabel, .rows dt { font: 600 12px/16px var(--sans); letter-spacing: 0.5px; text-transform: uppercase; }
+.brand { font: 700 16px var(--sans); letter-spacing: -0.3px; }
+.aura, :root[data-theme="light"] .aura { background: none; color: inherit; -webkit-text-fill-color: currentColor; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .aura { background: none; color: inherit; } }
+
+/* flat surfaces: no blur, no gradients */
+.card, .dcard, .gh-pill, .pill, .copy, .seg, .cmp-tabs, .cmp-bar, .toolbar, .code {
+  -webkit-backdrop-filter: none; backdrop-filter: none; }
+.mark { border-radius: 8px; box-shadow: none; background: #7A3CE6; }
+
+/* frame and section rules */
+.frame { border-left-color: var(--pu-outline-variant); border-right-color: var(--pu-outline-variant); }
+.sec { border-bottom-color: var(--pu-outline-variant); }
+.sec::before, .sec::after { display: none; }
+.toolbar { background: var(--pu-surface); border-bottom: 1px solid var(--pu-outline-variant); box-shadow: var(--pu-elev-1); }
+
+/* controls on the page */
+.cta { font: 600 16px/20px var(--sans); border-radius: 12px; min-height: 40px; padding: 10px 20px;
+  background: var(--pu-primary); color: var(--pu-on-primary); }
+.cta:active { background: var(--pu-primary-pressed); }
+.toolbar .cta, .cmp-status .cta { font-size: 14px; min-height: 40px; padding: 8px 16px; }
+.cta kbd { font: 600 12px var(--sans); opacity: 0.7; }
+.copy { font: 500 14px/1 var(--mono); border-radius: 12px; min-height: 40px; background: var(--pu-box);
+  border: 1px solid var(--pu-outline); box-shadow: none; }
+.copy em { font: 600 12px/1 var(--sans); background: var(--pu-highest); color: var(--pu-on-surface); border-radius: 9999px; }
+.gh-pill { border-radius: 9999px; background: var(--pu-box); border: 1px solid var(--pu-outline); box-shadow: none; font: 600 14px/1 var(--sans); }
+.badge { font: 600 12px/1 var(--sans); border-radius: 9999px; border-color: var(--pu-outline-variant); color: var(--pu-on-surface-variant); }
+.pill { font: 600 12px/1 var(--sans); border-radius: 9999px; background: var(--pu-highest); border: 0; box-shadow: none; color: var(--pu-text-meta); }
+.pill b { background: var(--pu-primary-container); color: var(--pu-on-primary-container); font-weight: 600; }
+
+/* segmented controls and tabs: selection = primary-container + 1.5 primary edge + check, never fill alone */
+.seg, .cmp-tabs { border-radius: 9999px; background: var(--pu-box); border: 1px solid var(--pu-outline); box-shadow: none; padding: 3px; }
+.seg button, .cmp-tab { font: 600 14px/1 var(--sans); color: var(--pu-on-surface-variant); border-radius: 9999px; min-height: 32px; padding: 8px 14px; }
+.seg button[aria-pressed="true"], .cmp-tab[aria-selected="true"] {
+  color: var(--pu-on-primary-container); background: var(--pu-primary-container); box-shadow: inset 0 0 0 1.5px var(--pu-primary); }
+.seg button[aria-pressed="true"]::before, .cmp-tab[aria-selected="true"]::before { content: "✓ "; }
+:root[data-theme="light"] .cmp-tab[aria-selected="true"] { color: var(--pu-on-primary-container); background: var(--pu-primary-container); }
+.cmp-bar { border-radius: 16px; background: var(--pu-box); border: 0; box-shadow: var(--pu-elev-1); }
+input[type="range"] { accent-color: var(--pu-primary); }
+.speedval, .tier-time { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+.text-link { font: 600 14px var(--sans); color: var(--pu-primary); border-bottom-color: var(--pu-primary); }
+.demo-head p { font: 400 14px/20px var(--sans); color: var(--pu-on-surface-variant); }
+:focus-visible { outline: 2px solid var(--pu-primary); outline-offset: 2px; }
+
+/* code samples (Roboto Mono allowed in the library) */
+.code { border-radius: 12px; background: var(--pu-box); box-shadow: inset 0 0 0 1px var(--pu-outline-variant); }
+
+/* stamp cards: light islands in both themes, dashed lavender edge, card tokens inside */
+.card, .dcard:not(.story) {
+  --fg: #111113; --muted: #5C5C63; --faint: #3A3A3C; --line: #D8B6FD; --line-strong: #D8B6FD;
+  --sunken: #F0F0F2; --solid: #7A3CE6; --on-solid: #FFFFFF; --glass-strong: #F0F0F2; --glass-line: #8A8A8A;
+  --ok: #4B2D63; --accent: #7A3CE6; --bg: #FAF9F7;
+  --tok-kw: #7A3CE6; --tok-str: #15803D; --tok-tag: #4B2D63; --tok-attr: #3A3A3C;
+  --ascii-accent: #7A3CE6; --ascii-flash: #7A3CE6; --ascii-skeleton: #5C5C63;
+  color: #111113; background: #FAF9F7; border: 1.5px dashed #D8B6FD; border-radius: 16px; box-shadow: var(--pu-elev-1);
+  transition: border-color .15s ease; }
+.card::after { display: none; }
+@media (hover: hover) { .card:hover { border-color: #7A3CE6; } }
+.card .code { background: #F0F0F2; box-shadow: none; }
+.card .hair, .card .rows dt, .card .rows dd { border-top-style: dashed; }
+.dcard.story, .dcard.story:not(.is-loading) { border: 0; border-radius: 16px; box-shadow: none; }
+
+/* inside cards: primary = purple fill with white label; secondary = outline; tags neutral; record chip = card-chip */
+.btn { font: 600 14px/20px var(--sans); border-radius: 12px; min-height: 40px; padding: 10px 16px;
+  color: #111113; background: #FAF9F7; box-shadow: inset 0 0 0 1px #8A8A8A; }
+.btn.primary { background: #7A3CE6; color: #FFFFFF; box-shadow: none; }
+.btn.primary:active { background: #6230C0; }
+.chip { font: 600 12px/16px var(--sans); letter-spacing: 0.2px; border-radius: 9999px; padding: 4px 10px;
+  background: #E4D5F5; color: #4B2D63; box-shadow: none; }
+
+/* photos stay black and white */
+.card .media:not(.chart), .dcard .media:not(.chart), .dcard img:not([src$=".svg"]), .hero-img, .st-bg, .st-av { filter: grayscale(1); }
+.hero-glow { display: none; }
+.avatar { box-shadow: 0 0 0 1.5px #D8B6FD; }

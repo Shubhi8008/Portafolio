@@ -106,10 +106,7 @@ import { AsciiSkeleton } from 'ascii-reveal';
 
 **2. Skeleton + reveal.** The skeleton paints first; when the data arrives, the real content decodes in (about 400 ms).
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/skreveal-dark.webp">
-  <img src="assets/readme/skreveal-light.webp" alt="Three cards show ASCII dither skeletons, then the real content decodes in through a character grid" width="100%">
-</picture>
+<img src="assets/portfolio/about-skeleton-demo.gif" alt="About me cards: my profile card, poster folio and experience timeline show ASCII dither skeletons, then the real content decodes in" width="100%">
 
 ```tsx
 import { AsciiReveal, AsciiSkeleton } from 'ascii-reveal';

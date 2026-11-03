@@ -96,10 +96,7 @@ Skeletons exist to paint instantly while data loads. `AsciiSkeleton` does exactl
 
 **1. Skeleton only.** A drop-in replacement for a gray skeleton. Content appears as normal when it arrives.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/skonly-dark.webp">
-  <img src="assets/readme/skonly-light.webp" alt="Three cards show ASCII dither skeletons, then the real content appears as each card's data arrives" width="100%">
-</picture>
+<img src="assets/portfolio/about-demo.gif" alt="About me cards: my profile card, poster folio and experience timeline decode in through a character grid in a wave from the corner" width="100%">
 
 ```tsx
 import { AsciiSkeleton } from 'ascii-reveal';

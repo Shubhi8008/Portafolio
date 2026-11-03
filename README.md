@@ -4,7 +4,7 @@ Interaction designer in New Delhi. I make complex things simple to use.
 
 This repo holds my portfolio site and the ascii-reveal loading effect it runs on. Content loads in through a character grid, then decodes into place.
 
-<img src="assets/portfolio/portfolio-demo.gif" alt="Walkthrough of the portfolio: the ID card tilts under the cursor, the About cards decode in, the three case study cards load behind ASCII mascots, then the LinkedIn and Spotify cards load" width="100%">
+<img src="assets/portfolio/hero-demo.gif" alt="The hero: my design license card decodes in through a character grid, then tilts in 3D under the cursor" width="100%">
 
 **Case studies**
 
@@ -23,12 +23,9 @@ This repo holds my portfolio site and the ascii-reveal loading effect it runs on
 
 ## ascii-reveal: the loading effect
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/ascii-reveal-demo-dark.webp">
-  <img src="assets/readme/ascii-reveal-demo-light.webp" alt="Three cards load as ASCII skeletons, then their real content decodes in through a character grid" width="100%">
-</picture>
+<img src="assets/portfolio/connect-demo.gif" alt="Connect with me section: a LinkedIn profile card and a Spotify now-playing card load as ASCII dither skeletons, then decode in" width="100%">
 
-<sub>Recorded from the real component: <code>&lt;AsciiSkeleton&gt;</code> while loading, then <code>&lt;AsciiReveal&gt;</code> decodes the data in.</sub>
+<sub>Recorded from my portfolio: <code>&lt;AsciiSkeleton&gt;</code> while loading, then <code>&lt;AsciiReveal&gt;</code> decodes the data in.</sub>
 
 ```tsx
 <AsciiReveal loading={!data}>
